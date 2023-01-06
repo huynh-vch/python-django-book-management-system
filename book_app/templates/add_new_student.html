@@ -1,0 +1,32 @@
+<title>Thêm mới sinh viên</title>
+{% extends 'base.html' %}
+
+<body>
+
+    {% block content %}
+    <div class="form">
+        <form method="POST" action="add_new_student">
+            {% csrf_token %}
+            <label class="label-default">Thông tin chi tiết về sinh viên</label><br>
+            <label>ID sinh viên:</label><br>
+            <div>{{form.roll_number}}</div>
+            <label>Tên sinh viên:</label><br>
+            <div> {{form.fullname}}</div>
+            <label>Địa chỉ sinh viên:</label><br>
+            <div> {{form.address}}</div>
+            <label>Chương trình học của sinh viên:</label><br>
+            <div>{{form.program}}</div><br>
+            <label class="label-default">Thông tin chi tiết về người giám hộ/phụ huynh của sinh viên</label><br>
+
+            <label>Họ và tên:</label><br>
+            <div>{{form.Guardian_name}}</div>
+            <label>Email hợp lệ:</label><br>
+            <div>{{form.Email}}</div>
+            <br> <button type="submit" class="btn btn-success">Thêm sinh viên</button>
+        </form>
+    </div>
+    {% endblock %}
+
+</body>
+
+</html>
